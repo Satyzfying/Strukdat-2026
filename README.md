@@ -1,4 +1,5 @@
 Nama : Gede Satya Putra Aryanta
+
 NRP : 5027251012
 
 # Repo ini akan berisi project-project atau tugas dari mata kuliah Strukdat
