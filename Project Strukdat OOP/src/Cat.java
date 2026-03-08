@@ -1,6 +1,6 @@
-public abstract class Cat {
+public abstract class Cat { //abstraction
     
-    private String name;
+    private String name; //encapsulation
     private String mood;
     private int energy;
     private int hunger;
@@ -32,9 +32,9 @@ public abstract class Cat {
         }
         System.out.println("Done Petting");
     }
-    public abstract void play();
+    public abstract void play();//abstraction
     
-    public String getName() {
+    public String getName() {//setter and getter
          return name;
     }
 
@@ -56,7 +56,7 @@ public abstract class Cat {
                        " and its hunger is " + hunger + "\n");
     }
 
-    static class PersianCat extends Cat {
+    static class PersianCat extends Cat { //inheritnance
         public PersianCat(String name, String mood, int energy, int hunger){
     
             super(name, mood, energy, hunger);
@@ -80,7 +80,7 @@ public abstract class Cat {
     }
 
     public static void main(String[] args) throws Exception {
-        Cat Tabi = new PersianCat("Tabi","Happy",50,50);
+        Cat Tabi = new PersianCat("Tabi","Happy",50,50); //polymorphism
 
         Tabi.eat();
         Tabi.pet();
