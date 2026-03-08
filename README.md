@@ -2,9 +2,9 @@ Nama : Gede Satya Putra Aryanta
 
 NRP : 5027251012
 
-# Repo ini akan berisi project-project atau tugas dari mata kuliah Strukdat
+## Repo ini akan berisi project-project atau tugas dari mata kuliah Strukdat
 
-## Project 1. OOP, project Cat mhmmhmhmhm
+### Project 1. OOP, project Cat mhmmhmhmhm
 
 This project is inspired by my cat in a video game called "Heartopia"
 
