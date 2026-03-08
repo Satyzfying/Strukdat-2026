@@ -15,39 +15,181 @@ Note to myself in the future, don't use AI to write code. Use AI to ask how to c
 
 Project explanation :
 
-In this project, I implemented the four main principles of Object-Oriented Programming (OOP): Encapsulation, Inheritance, Abstraction, and Polymorphism. The program simulates different types of cats with shared behaviors and specialized actions.
+This project is a simple Java program created to demonstrate the **four pillars of Object-Oriented Programming (OOP)**:
+**Encapsulation, Inheritance, Abstraction, and Polymorphism.**
 
-**Encapsulation**
-  
-Encapsulation is implemented by restricting direct access to the internal data of the Cat class. The attributes of the cat are declared as private so they cannot be modified directly from outside the class.
+The program simulates different types of cats with shared behaviors such as eating and being petted, while allowing each type of cat to have its own unique way of playing.
 
-**Inheritance**
+---
 
-Inheritance is used to create specific types of cats that share the common properties and behaviors defined in the Cat class.
-Because of inheritance, both subclasses automatically gain access to the methods defined in Cat, such as:
+# Project Overview
 
-eat()
+The base class `Cat` represents the general concept of a cat.
+Two specific types of cats extend this class:
 
-pet()
+* **PersianCat**
+* **SiameseCat**
 
-showStatus()
+All cats share common properties such as:
 
-getter methods
+* name
+* mood
+* energy
+* hunger
 
-This avoids rewriting the same functionality and allows specialized behavior to be added when necessary.
+They also share common behaviors like eating, being petted, and showing their current status.
 
-**Abstraction**
+However, each type of cat behaves differently when playing.
 
-Abstraction is applied by defining Cat as an abstract class:
+---
 
-Inside the class, the play() method is declared as an abstract method:
+# OOP Concepts Implemented
 
-This means every type of cat must implement its own version of how it plays. The base class only defines that a cat must be able to play, but the exact behavior is left to the subclasses.
+## 1. Encapsulation
 
+Encapsulation is used to protect the internal data of the `Cat` class.
+The attributes are declared as `private` so they cannot be accessed directly from outside the class.
 
-**Polymorphism**
+```java
+private String name;
+private String mood;
+private int energy;
+private int hunger;
+```
 
-Polymorphism allows objects of different classes to be treated as objects of the same parent class.
+Getter methods are provided to access the values safely:
+
+```java
+public String getName()
+public String getMood()
+public int getEnergy()
+public int getHunger()
+```
+
+This ensures the internal state of each object is controlled through class methods such as `eat()`, `pet()`, and `play()`.
+
+---
+
+## 2. Inheritance
+
+Inheritance allows specific types of cats to reuse the behavior defined in the `Cat` class.
+
+```java
+class PersianCat extends Cat
+class SiameseCat extends Cat
+```
+
+Both subclasses inherit methods like:
+
+* `eat()`
+* `pet()`
+* `showStatus()`
+
+This prevents code duplication and makes the design easier to maintain.
+
+---
+
+## 3. Abstraction
+
+The `Cat` class is declared as an **abstract class**:
+
+```java
+public abstract class Cat
+```
+
+It contains an abstract method:
+
+```java
+public abstract void play();
+```
+
+This means every type of cat **must define its own way of playing**, while the base class only specifies that the behavior must exist.
+
+Example implementations:
+
+**PersianCat**
+
+```java
+@Override
+public void play(){
+    System.out.println(getName()+" is laying on its back");
+}
+```
+
+**SiameseCat**
+
+```java
+@Override
+public void play(){
+    System.out.println(getName()+" is jumping everywhere!");
+}
+```
+
+---
+
+## 4. Polymorphism
+
+Polymorphism allows objects of different subclasses to be treated as objects of the same parent class.
+
+```java
+Cat Tabi = new PersianCat("Tabi","Happy",50,50);
+Cat Grayie = new SiameseCat("Grayie","Tired",0,0);
+```
+
+Even though both variables are declared as `Cat`, they behave differently when `play()` is called:
+
+```java
+Tabi.play();
+Grayie.play();
+```
+
+Each object executes its own version of the method, demonstrating **runtime polymorphism**.
+
+---
+
+# Example Output
+
+Example output from the program:
+
+```
+You offered Tabi to eat
+Tabi is eating
+You want to pet Tabi
+Done Petting
+You want to play with Tabi
+Tabi is laying on its back
+My cat Tabi is happy, its energy is: 50 and its hunger is 60
+
+You offered Grayie to eat
+Grayie is eating
+You want to pet Grayie
+Done Petting
+You want to play with Grayie
+Grayie is jumping everywhere!
+My cat Grayie is tired, its energy is: 0 and its hunger is 10
+```
+
+---
+
+# How to Run
+
+1. Compile the program
+
+```
+javac Cat.java
+```
+
+2. Run the program
+
+```
+java Cat
+```
+
+---
+
+# Author
+
+Created as a simple demonstration of **Object-Oriented Programming in Java**.
 
 In the main method, both cats are stored using the Cat reference type:
 
