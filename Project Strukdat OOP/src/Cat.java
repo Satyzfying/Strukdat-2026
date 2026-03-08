@@ -34,7 +34,7 @@ public abstract class Cat { //abstraction
     }
     public abstract void play();//abstraction
     
-    public String getName() {//setter and getter
+    public String getName() {//getter
          return name;
     }
 
