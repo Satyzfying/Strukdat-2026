@@ -1,4 +1,4 @@
-public class Cat {
+public abstract class Cat {
     
     private String name;
     private String mood;
@@ -13,30 +13,27 @@ public class Cat {
     }
 
     public void eat(){
+        System.out.println("You offered "+getName()+ " to eat");
         if(hunger>=100){
-            System.out.println(name +" is not hungry!"); //inget nambahin fungsi nama kucing
+            System.out.println(name +" is not hungry!"); 
         }
         else{
             hunger+=10;
+            System.out.println(getName()+" is eating");
         }
     }
     public void pet(){
+        System.out.println("You want to pet " + getName());
         if(energy<50){
             mood = "tired";
         }
         else{
             mood = "happy";
         }
+        System.out.println("Done Petting");
     }
-    public void play(){
-        if (energy<=0){
-            System.out.println(name +" is tired, cannot play");
-        }
-        else{
-            mood = "happy";
-            energy -= 10;
-        }
-    }
+    public abstract void play();
+    
     public String getName() {
          return name;
     }
@@ -56,15 +53,44 @@ public class Cat {
     System.out.println("My cat " + name +
                        " is " + mood +
                        ", its energy is: " + energy +
-                       " and its hunger is " + hunger);
+                       " and its hunger is " + hunger + "\n");
     }
+
+    static class PersianCat extends Cat {
+        public PersianCat(String name, String mood, int energy, int hunger){
+    
+            super(name, mood, energy, hunger);
+        }
+        @Override
+        public void play(){
+            System.out.println("You want to play with "+getName());
+            System.out.println(getName()+" is laying on its back");
+        }
+    }
+    static class SiameseCat extends Cat {
+        public SiameseCat(String name, String mood, int energy, int hunger){
+    
+            super(name, mood, energy, hunger);
+        }
+        @Override
+        public void play(){
+            System.out.println("You want to play with "+getName());
+            System.out.println(getName()+" is jumping everywhere!");
+        }
+    }
+
     public static void main(String[] args) throws Exception {
-        Cat Tabi = new Cat("Tabi","Happy",50,50);
+        Cat Tabi = new PersianCat("Tabi","Happy",50,50);
 
         Tabi.eat();
         Tabi.pet();
         Tabi.play();
         Tabi.showStatus();
 
+        Cat Grayie = new SiameseCat("Grayie","Tired",0,0);
+        Grayie.eat();
+        Grayie.pet();
+        Grayie.play();
+        Grayie.showStatus();
     }
 }
