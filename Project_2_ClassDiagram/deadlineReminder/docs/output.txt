@@ -1,0 +1,30 @@
+DATA MAHASISWA
+Nama Mahasiswa : Satya
+NRP            : 5027251012
+
+DAFTAR SEMUA TUGAS
+Judul      : Tugas Class Diagram
+Mata Kuliah: Struktur Data dan Pemrograman Berorientasi Objek (ET4203)
+Deadline   : 2026-03-26
+Progress   : 50%
+Status     : Sedang Dikerjakan
+
+Judul      : Tugas Kuis
+Mata Kuliah: Sistem Operasi (ET4201)
+Deadline   : 2026-04-03
+Progress   : 0%
+Status     : Belum Selesai
+
+TUGAS DENGAN PRIORITAS TERTINGGI
+Judul      : Tugas Class Diagram
+Mata Kuliah: Struktur Data dan Pemrograman Berorientasi Objek (ET4203)
+Deadline   : 2026-03-26
+Progress   : 50%
+Status     : Sedang Dikerjakan
+
+Prioritas  : 25
+
+DAFTAR PRIORITAS TUGAS
+Tugas Class Diagram - Prioritas 25
+Tugas Kuis - Prioritas 13
+
